@@ -1,0 +1,104 @@
+Programmation: TD/deuxième partie
+
+
+
+Exercice 15 : Ecrire un algorithme qui demande un nombre de départ, et qui calcule la somme des entiers jusqu'à ce nombre. Par exemple si l'on tape 4 , l’algorithme doit calculer: 1 + 2 + 3+ 4 = 10 Réécrire l'algorithme qui calcule cette fois la moyenne !
+
+
+Solution:
+variables
+i,s,Vaeur:entiers
+Début
+Ecrire("entrer un nombre entier":)
+Lire(Valeur)
+s<-0
+Pour i de 1 à Valeur faire
+s<-s+i
+Finpour
+Ecrire("la somme des nombres de 1 à"Valeur, est ",s)
+Fin
+
+
+Exercice 17: Faire un programme qui calcule le PGCD de deux nombres saisis au clavier en utilisant l'astuce suivante: soustrait le plus petit des deux entiers du plus grand jusqu'à ce qu'ils soient égaux.
+
+Solution:
+
+Fonction P_PGCD(a,b):entiers
+Début
+Répéter
+selonque
+a>b: a<-a-b
+a<b: b<-b-a
+Finselon
+Jusqu'à a=b
+retourner(a)
+Fin
+
+
+Exercice 19 : Ecrire l’algorithme qui affiche la somme des prix d'une suite d'articles en CFA (entiers) saisies par l'utilisateur et se terminant par zéro.
+
+Solution:
+Variables
+p,s:entiers
+Début
+s<-0
+Répéter
+Ecrire("entrer le prix de l'article(0 si fin):")
+Lire(p)
+s<-s+p
+Jusqu'à p=0
+Ecrire("la somme des prix des articles est" ,s)
+Fin
+
+Exercice 20 : Ecrire un algorithme qui demande successivement 10 nombres à l'utilisateur, et qui affiche à la fin le plus grand de ces 10 nombres Et affiche aussi son rang dans la liste saisie
+
+Solution
+
+Const nombre=10;
+Variables
+indice,valeur,:entiers
+Indice_grand,plusgrand:entier
+Début
+Ecrire("entrer le premier nombre:")
+Lire(Valeur)
+plusgrand<-Valeur
+Indice_grand<-1
+indice<2
+Tantque (indice<=NBRE)Faire
+Ecrire("entrer le nombre numéro:", indice)
+Lire(Valeur)
+Si Valeur>plusgrand) Alors
+indice_grand<-indice
+plusgrand<-Valeur
+Finsi
+indice<-indice+1
+Fintantque
+Ecrire("le plus grand de ces nombres est:",plusgrand)
+Ecrire("c'était le ",indice_grand,"ème nombre saisi)
+Fin
+
+
+Exercice 21 : Ecrire un algorithme mettant en œuvre le jeu suivant entre deux joueurs : Le premier utilisateur saisi un entier que le second doit deviner. Pour cela, il a le droit à autant de tentatives qu'il souhaite. A chaque échec, le programme lui indique si l'entier est plus grand ou plus petit que sa proposition. Un score est affiché lorsque l'entier est trouvé.
+
+Variables
+a,n,t:entiers
+Début
+Ecrire("entrer le nombre à deviner:")
+Lire(a)
+Ecrire("entrer le premier nombre essai:")
+Lire(n)
+t<-1
+Tantque (a=!n)
+Faire n>a Alors Ecrire("nombre cherché plus petit que:",n)
+Sinon Ecrire("nombre cherché plus grand que:",n)
+Finsi
+t<-+1
+Ecrire(enter un autre nombre(tentative N°",t,")")
+Lire(n)
+Fintantque
+Ecrire("c'est gagné: le nombre de tentatives est:",t=
+Fin
+
+
+
+

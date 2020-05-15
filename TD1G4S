@@ -1,0 +1,426 @@
+
+TD Programmation/Première partie
+Exercice 1 :
+Ecrire un programme qui saisit deux entiers a et b, calcule et affiche le quotient entier, le reste de la division et le ratio (quotient réel).
+
+Solution:
+var
+a,b,quotient,reste : entiers
+ratio : reel
+Debut
+Ecrire("Entrer la valeur de a")
+lire(a)
+Ecrire("Entrer la valeur de b")
+lire(b)			   
+Si a>b et (b!=0) alors
+quotient <-a div b
+afficher("le quotient est :", quotient)
+reste <-a % b
+afficher("le reste est : ", reste)
+ratio <- a/b
+afficher("le quotient réel est : ", ratio)
+Sinon
+afficher("division impossible")
+FinSi
+Fin
+
+Exercice 2
+Ecrire un programme qui demande à l’utilisateur de donner le rayon d’un cercle et lui retourne sa surface et son périmètre. 
+PI =  4 * arc tangeante de 1. la fonction arc tangeante est atan ex : atan(2).
+
+Solution:
+Var
+rayon,surface,périmètre:réels
+Début
+Ecrire("donner le rayon")
+Lire(rayon)
+sufarce<-4*atan(2)*rayon*rayon
+périmètre<-2*4*atan(2)*rayon
+Afficher("la surface est:," surface)
+Afficher("le périmètre est:," périmètre)
+Fin
+
+Exercice 3 :
+Version 1 :
+Faire un programme qui saisit 3 résistances : R1, R2 et R3.
+Calculer et afficher la résistance en série : R1+R2+R3
+Calculer et afficher la résistance en parallèle : (R1*R2*R3)/(R1*R2+R2*R3+R1*R3)
+Version 2 :
+Demander a l’utilisateur d’indiquer son choix.
+S’il entre la valeur  1, calculer et afficher la fréquence en série.
+S’il entre la valeur 2, calculer et afficher la fréquence en parallèle 
+
+Solution:
+Version 1:
+var
+ R1, R2, R3, RSérie, RParallèle : réels
+Debut
+Ecrire("R1 :")
+lire(R1)
+Ecrire("R2 :")
+lire(R2)
+Ecrire("R3 :")
+lire(R3)
+RSérie<-R1+R2+R3
+Afficher("RSérie", RSérie)
+RParallèle<-(R1*R2*R3)/(R1*R2+R2*R3+R1*R3)
+Afficher("RParallele", RParallele)
+Fin
+				                  ------------------
+Version 2:
+var
+R1, R2, R3, R, choix : entiers
+Debut
+Ecrire("R1 :")
+lire(R1)
+Ecrire("R2 :")
+lire(R2)
+Ecrire("R3 :")
+lire(R3)
+Ecrire("saisisser une valeur(1 ou 2) pour votre choix")
+Lire(choix)
+Si (choix =1) alors
+R<-R1 + R2 + R3
+Afficher("la fréquence est en série, sa valeur est :", R)
+Sinon (choix=2) alors
+R<-(R1*R2*R3)/(R1*R2+R2*R3+R1*R3)					  
+Afficher("la fréquence est en parallèle, sa valeur est : ", R)
+FinSi
+Fin
+
+Exercice 4
+Ecrire un programme qui saisit un réel x et un entier n et affiche x à la puissance n.
+Version 1 : utiliser la fonction pow  du fichier d’en-tête <math.h>  ex : pow(x,n)
+Version 2 : en utilisant une boucle
+
+Solution:
+Version1: Dans algobox
+FONCTIONS_UTILISEES
+VARIABLES
+  x EST_DU_TYPE NOMBRE
+  n EST_DU_TYPE NOMBRE
+  index EST_DU_TYPE NOMBRE
+  puissance EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  LIRE x
+  LIRE n
+  puissance PREND_LA_VALEUR 1
+  SI (x==0 et n==0) ALORS
+    DEBUT_SI
+    AFFICHER* "indéfini"
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      POUR index ALLANT_DE 1 A n
+        DEBUT_POUR
+        puissance PREND_LA_VALEUR puissance*x
+        FIN_POUR
+      AFFICHER puissance
+      FIN_SINON
+FIN_ALGORITHME
+
+Version2: 
+Variables
+N,p,i,R:entiers
+Début
+Ecririre("entrer la base N:")
+Lire(N)
+Ecririre("entrer l'exposant p:")
+Lire(p)
+R<-1
+i<-1
+tantque i<=p
+R<-R*N
+i<-i+1
+Fintantque
+Ecrire("N,'^',p,'=',R")
+Fin
+
+
+Exercice 5 :
+Ecrire un programme qui saisit 5 variables de type entier au clavier et qui affiche leur somme. Utiliser une boucle (for ou while ou do..while).
+
+Solution:
+Var
+nombre,somme,i:entiers
+Début
+somme<-0
+Pour i<-1 à 5
+Ecrire("Donner un nombre:")
+Lire(nombre)
+somme<-somme+nombre;
+Fin pour
+Afficher("La some des nombres est: "somme")
+Fin
+
+Exercice 6 :
+Faire un programme qui saisit  les coordonnées de 2 points A (x1, y1) et b(x2, y2) et qui affiche la distance entre les 2 points.
+Formule : distante = racine carrée de ((x1 – x2)2  + (y1 – y2)2)
+ Racine carrée : sqrt. Ex : sqrt(7) ; <math.h>
+
+Solution:
+Var
+x1,x2,y1,y2,distance:réels
+Ecrire("Donner l'abscisse du point A:")
+Lire(x1)
+Ecrire("Donnée l'ordonnée du point A:")
+Lire(y1)
+Ecrire("Donner l'abscisse du point B:")
+Lire(x2)
+Ecrire("Donnée l'ordonnée du point B:")
+Lire(y2)
+distance<-sqrt(x1-x2)*2+(y1-y2)*2)
+Afficher("ladistance entre le pont A et B:")
+
+
+Exercice 7 :  Décomposition d’un montant en euros Écrire un algorithme permettant de décomposer un montant entré au clavier en billets de 20, 10, 5 euros et pièces de 2, 1 euros, de façon à minimiser le nombre de billets et de pièces.
+
+Solution:
+Var
+montant,reste,b20,b10,b5,b2,b1:entiers
+Début
+Ecrire("entrer un montant:")
+b20<-montant div 20
+reste<-montant mod 20 ou reste<-montant-(20*b20)
+b10<-reste div 10
+reste<-reste mod 10
+b5<-reste div 5
+reste<-reste mod 5
+b2<-reste div 2
+reste<- reste mod 2
+b1<- reste div 1
+reste<-reste mod 1
+Afficher("le montant", montant,"décomposé en euros donne:")
+Afficher("billet de 20", b20")
+Afficher("billet de 10", b10")
+Afficher("billet de 5", b5")
+Afficher("billet de 2", b2")
+Afficher("billet de 1", b1")
+Fin
+
+Exercice 8 : Ecrire un algorithme permettant de résoudre une équation du second degré. 
+Ax2 + bx + c = 0
+
+Solution:
+Rappel:
+Si a!=0;D=b2-4ac
+Sia=0; b=0 pas de solution
+Si D<0; pas de solution
+Si D=0;x=-b/2a
+Si D>0
+x1=(-b-racine de D/(2a))
+x2=-(b+racine de D/(2a))
+
+Solution:
+Var
+a,b,c et D:entiers
+Lire(a,b,c)
+si a=0 alors
+si n=0 alors
+Ecrire("Pas de solution":)
+sinon
+Ecrire("Un solution", -c/b")
+Fin si
+Sinon
+D<-(b*b)-(4*a*c)
+Si D<0 alors
+Ecrire("Aucune solution":)
+
+Sinon
+si D=0 alors
+Ecrire("Une solution":, -b/(2*a))
+sinon
+Ecrire("Deux solution":, (-b-racine de D/(2a)) et -(b+racine de D/(2a))
+
+Fin si
+
+Fin si
+Fin si
+Fin
+
+Exercice 9 : Ecrire un algorithme qui donne la durée de vol en heure minute connaissant l'heure de départ et l'heure d'arrivée.
+a. On considère que le départ et l'arrivé ont lieu le même jour 
+b. On suppose que la durée de vol est inférieure à 24 heures mais peut avoir lieu le lendemain.  
+
+Solution: sur algobox
+
+a.
+FONCTIONS_UTILISEES
+VARIABLES
+  h1 EST_DU_TYPE NOMBRE
+  h2 EST_DU_TYPE NOMBRE
+  m1 EST_DU_TYPE NOMBRE
+  m2 EST_DU_TYPE NOMBRE
+  hd EST_DU_TYPE NOMBRE
+  md EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER* "écrire(entrer harraire de départ: h min)"
+  LIRE h1
+  LIRE m1
+  AFFICHER* "écrire(horraire d'arrivée: h min)"
+  LIRE h2
+  LIRE m2
+  SI (m2>m1) ALORS
+    DEBUT_SI
+    hd PREND_LA_VALEUR h2-h1
+    md PREND_LA_VALEUR m2-m1
+    AFFICHER* "écrire(la durée du vol est: , hd , ':', md)"
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      hd PREND_LA_VALEUR h2-h1-1
+      md PREND_LA_VALEUR m2+60-m1
+      AFFICHER* "écrire(la durée de vol est: , hd , ':' , md)"
+      FIN_SINON
+FIN_ALGORITHME
+
+b.
+
+FONCTIONS_UTILISEES
+VARIABLES
+  h1 EST_DU_TYPE NOMBRE
+  h2 EST_DU_TYPE NOMBRE
+  m1 EST_DU_TYPE NOMBRE
+  m2 EST_DU_TYPE NOMBRE
+  hd EST_DU_TYPE NOMBRE
+  md EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER* "écrire(entrer horraire départ et horraire d'arrivée: h1 m1 h2 m2) )"
+  LIRE h1
+  LIRE m1
+  LIRE h2
+  LIRE m2
+  SI (h2>h1 et m2>m2) ALORS
+    DEBUT_SI
+    hd PREND_LA_VALEUR h2-h1
+    md PREND_LA_VALEUR m2-m1
+    AFFICHER* "écrire'hd, md)"
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      hd PREND_LA_VALEUR h2-h1-1
+      md PREND_LA_VALEUR m2+60-m1
+      AFFICHER* "écrire(hd, md)"
+      SI (m2>m1) ALORS
+        DEBUT_SI
+        hd PREND_LA_VALEUR h2-h1+24
+        md PREND_LA_VALEUR m2-m1
+        AFFICHER* "écrire(hd, md)"
+        FIN_SI
+        SINON
+          DEBUT_SINON
+          hd PREND_LA_VALEUR h2-h1+24-1
+          md PREND_LA_VALEUR m2+60-m1
+          AFFICHER* "écrire(hd, md)"
+          FIN_SINON
+      FIN_SINON
+FIN_ALGORITHME
+
+Exercice 10 : Ecrire un algorithme qui lit trois valeurs entières ( A, B et C) et qui permet de les trier par échanges successifs Et enfin les afficher dans l'ordre 4. 
+
+Solution:
+Var
+A,B,C,n:entiers
+Ecrire("écrire la valeur de A":)
+Lire(A)
+Ecrire("écrire la valeur de B":)
+Lire(B)
+Ecrire("écrire la valeur de C":)
+Lire(C)
+Si A>B alors 
+n<-A
+A<-B
+B<-n
+Finsi
+Si A>C alors
+n<-A
+A<-C
+C<-n
+Finsi
+Si B>C alors
+n<-B
+B<-C
+C<-n
+Finsi
+Afficher("A:A,"B:B,"C:C")
+Fin
+
+Exercice 11 : Ecrire un algorithme calculatrice permettant la saisie du premier entier (a) de l'opération ( + ou – ou * ou / : sont des caractères) et du deuxième entier (b) et qui affiche le résultat.
+
+Solution:
+
+Var
+a,b:entiers
+op:caractère
+Début
+Ecrire("entrer le premier entier")
+Lire(a)
+Ecrire("l'opération")
+Lire(op)
+Ecrire("entrer le deuxième entier"
+Lire(b)
+Selonque
+op='+': Ecrire("la somme de ",a,"et de ",b,"est égale",a+b)
+op='*': Ecrire("le produit de ",a,"et de ",b,"est égale",a*b)
+op='/': si (b=0)  alors Ecrire("la division impossible")
+        sinon Ecrire("la division de ",a, "par ",b, "est égale",a/b)
+op='-': Ecrire("la soustraction ",a,"et de ",b,"est égale",a-b)
+Sinon Ecrire("Opération invalide")
+Finselonque
+
+Exercice 12 : Un nombre est parfait s’il est égal à la somme de ses diviseurs stricts (différents de lui-même). Ainsi par exemple, l’entier 6 est parfait car 6 = 1 + 2 + 3. Écrire un algorithme permettant de déterminer si un entier naturel est un nombre parfait.
+
+Solution:
+Var
+nbr, i, somme:entiers
+Début
+somme<-0
+Ecrire("entrer un nombre:")
+lire(nbr)
+Pour i allant de 1 à (nbr-1)
+Si (nbr mod i==0)
+somme<-somme+1
+Finsi
+Finpour
+Si (nbr==somme)
+Ecrire("nbr, est un nombre parfait:")
+Sinon
+Ecrire("nbr, n'est pas +un nombre parfait:")
+Fin
+
+Exercice 13 : Faire un programme qui saisit une date (jour, mois et année) at qui indique si la date est valide
+
+Solution:
+
+Variables
+j,m,a,max:entiers
+temp:boleen
+Début
+temp<-true
+max<-31
+Ecrire("Donner le jour:")
+Lire(j)
+Ecrire("Donner le mois:")
+Lire(m)
+Ecrire("Donner l'année:")
+Lire(a)
+Si ((a>=1000) et (a<=2020))
+Selonque(m):
+cas 1:
+cas 3:
+cas 5:
+cas 7:
+cas 8:
+cas 10:
+cas 12:max=31
+break
+cas 2:max=28
+break
+default:temp<-false
+Finselonque
+(temp et ((j>=)et (j<=max)))?
+Ecrire("la date est valide":):Ecrire("la date est invalide")
+Finsi
+fin
+
+
